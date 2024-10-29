@@ -1,0 +1,22 @@
+/* Global Styles */
+* {
+  box-sizing: border-box; /* Makes padding and border part of the element's total width/height */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif; /* Set a default font */
+  background-color: #f2f2f2; /* Light grey background */
+  min-height: 100vh; /* Minimum height of the viewport */
+}
+
+/* Ensure main containers fill the viewport */
+.container {
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  justify-content: flex-start; /* Align items to the start vertically */
+  width: auto; /* Full width */
+  padding: 1rem; /* Padding around the content */
+  margin: 0 auto; /* Center the container */
+}
