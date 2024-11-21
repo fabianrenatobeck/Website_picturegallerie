@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import '../styles/Cart.css';
+import './Cart.css';
 
 const Cart = ({ cart, removeFromCart }) => {
     const getTotalPrice = () => {

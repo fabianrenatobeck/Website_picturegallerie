@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import '../styles/Drinks.css';
+import './Drinks.css';
 
 const Drinks = ({ drinks, addToCart }) => {
     const [quantities, setQuantities] = useState({});
