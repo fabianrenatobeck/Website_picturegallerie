@@ -5,6 +5,8 @@ import Drinks from './components/Drinks';
 import Cart from './components/Cart';
 import Home from './components/Home';
 import Gallery from './components/Gallery';
+import AboutUs from './components/AboutUs'; // About Us hinzufügen
+import Footer from './components/Footer'; // Footer hinzufügen
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -22,12 +24,10 @@ const App = () => {
         setCart((prevCart) => {
             const existingDrink = prevCart.find((item) => item.id === drink.id);
             if (existingDrink) {
-                // If the drink is already in the cart, increase its quantity
                 return prevCart.map((item) =>
                     item.id === drink.id ? { ...item, quantity: item.quantity + quantity } : item
                 );
             } else {
-                // If the drink is not in the cart, add it with the specified quantity
                 return [...prevCart, { ...drink, quantity }];
             }
         });
@@ -38,10 +38,8 @@ const App = () => {
             const existingDrink = prevCart.find((item) => item.id === drinkId);
             if (existingDrink) {
                 if (existingDrink.quantity <= quantity) {
-                    // If the quantity to remove is greater or equal, remove the drink from the cart
                     return prevCart.filter((item) => item.id !== drinkId);
                 } else {
-                    // If not, just decrease the quantity
                     return prevCart.map((item) =>
                         item.id === drinkId ? { ...item, quantity: item.quantity - quantity } : item
                     );
@@ -59,10 +57,11 @@ const App = () => {
                     <Route path="/" element={<Home />} />
                     <Route path="/products" element={<Drinks drinks={drinksList} addToCart={addToCart} />} />
                     <Route path="/cart" element={<Cart cart={cart} removeFromCart={removeFromCart} />} />
-                    <Route path="/gallery" element={<Gallery />} /> {/* Galerie-Seite */}
-
+                    <Route path="/gallery" element={<Gallery />} />
+                    <Route path="/aboutUs" element={<AboutUs />} /> {/* About Us Route */}
                 </Routes>
             </div>
+            <Footer /> {/* Footer hinzufügen */}
         </Router>
     );
 };

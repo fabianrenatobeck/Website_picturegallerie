@@ -1,0 +1,42 @@
+.about-us {
+    background-color: #f9f9f9;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.about-us h2 {
+    color: #ff6f61;
+    margin-bottom: 2rem;
+}
+
+.carousel {
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.carousel img {
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.about-text {
+    line-height: 1.8;
+    font-size: 1rem;
+    color: #555;
+    margin-top: 2rem;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}

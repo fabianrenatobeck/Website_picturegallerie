@@ -1,15 +1,16 @@
 .navbar {
-    background-color: #ff6f61; /* Warm coral */
+    background-color: #ff6f61;
     color: white;
     padding: 1rem;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .nav-links {
-    list-style-type: none;
+    list-style: none;
     display: flex;
-    justify-content: center;
     gap: 1rem;
 }
 
@@ -21,13 +22,5 @@
 }
 
 .nav-links a:hover {
-    color: #ffe5b4; /* Light peach */
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .nav-links {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
+    color: #ffe5b4;
 }
