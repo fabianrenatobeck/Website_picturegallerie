@@ -1,93 +1,21 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./AboutUs.css";
+import carousel from "./TextFormating/carousel.jsx"
+
+export default function Home() {
+    const personenSlides = [
+        { image: Imageguisan, title: 'Henri Guisan', description: 'Wichtiger militärischer Führer im 2. Weltkrieg.', linkUrl: 'https://www.nzz.ch/schweiz/ein-gluecksfall-in-der-gefaehrlichsten-phase-unserer-geschichte-wie-general-guisan-zum-held-der-schweiz-wurde-und-was-er-uns-heute-noch-sagt-ld.1853528', linkName: 'Henri Guisan', internalLink: '/wichtige-personlichkeiten' },
+        { image: Imagegonard, title: 'Samuel Gonard', description: 'Kompetenter Stratege im 2. Weltkrieg.', linkUrl: 'https://de-academic.com/dic.nsf/dewiki/1230769', linkName: 'Samuel Gonard', internalLink: '/wichtige-personlichkeiten' },
+        { image: Imageburckhardt, title: 'Carl Buckhardt', description: 'Präsident des Internationalen Komitees vom Roten Kreuz im 2. Weltkrieg.', linkUrl: 'https://de.wikipedia.org/wiki/Carl_Jacob_Burckhardt', linkName: 'Carl Buckhardt', internalLink: '/wichtige-personlichkeiten' },
+        { image: Imagemasson, title: 'Roger Masson', description: 'Zuständig für das Informationsnetz.', linkUrl: 'https://en.wikipedia.org/wiki/Roger_Masson', linkName: 'Roger Masson', internalLink: '/wichtige-personlichkeiten' },
+    ];
+
 
 function AboutUs() {
     return (
         <section className="about-us">
             <h2 className="text-center">Das sind wir</h2>
-            <div
-                id="carouselExampleIndicators"
-                className="carousel slide"
-                data-bs-ride="carousel"
-                data-bs-interval="3000"
-                // Automatisches Scrollen alle 3 Sekunden
-            >
-                <ol className="carousel-indicators">
-                    <li
-                        data-bs-target="#carouselExampleIndicators"
-                        data-bs-slide-to="0"
-                        className="active"
-                    ></li>
-                    <li
-                        data-bs-target="#carouselExampleIndicators"
-                        data-bs-slide-to="1"
-                    ></li>
-                    <li
-                        data-bs-target="#carouselExampleIndicators"
-                        data-bs-slide-to="2"
-                    ></li>
-                </ol>
-                <div className="carousel-inner">
-                    <div className="carousel-item active">
-                        <img
-                            className="d-block w-100"
-                            src="../public/bild1.png"
-                            alt="First slide"
-                        />
-                        <div className="carousel-caption d-none d-md-block">
-                            <h5>Max Muster</h5>
-                            <p>Geschäftsführer</p>
-                        </div>
-                    </div>
-                    <div className="carousel-item">
-                        <img
-                            className="d-block w-100"
-                            src="/team2.jpg"
-                            alt="Second slide"
-                        />
-                        <div className="carousel-caption d-none d-md-block">
-                            <h5>Sarah Beispiel</h5>
-                            <p>Produktentwicklung</p>
-                        </div>
-                    </div>
-                    <div className="carousel-item">
-                        <img
-                            className="d-block w-100"
-                            src="/team3.jpg"
-                            alt="Third slide"
-                        />
-                        <div className="carousel-caption d-none d-md-block">
-                            <h5>John Doe</h5>
-                            <p>Marketing</p>
-                        </div>
-                    </div>
-                </div>
-                <a
-                    className="carousel-control-prev"
-                    href="#carouselExampleIndicators"
-                    role="button"
-                    data-bs-slide="prev"
-                >
-          <span
-              className="carousel-control-prev-icon"
-              aria-hidden="true"
-          ></span>
-                    <span className="visually-hidden">Previous</span>
-                </a>
-                <a
-                    className="carousel-control-next"
-                    href="#carouselExampleIndicators"
-                    role="button"
-                    data-bs-slide="next"
-                >
-          <span
-              className="carousel-control-next-icon"
-              aria-hidden="true"
-          ></span>
-                    <span className="visually-hidden">Next</span>
-                </a>
-            </div>
             <div className="about-text mt-4">
                 <h4>Über uns – Limeli</h4>
                 <p>
