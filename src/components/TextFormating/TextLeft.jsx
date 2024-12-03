@@ -1,17 +1,35 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import {React} from 'react';
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-export default function TextLeft({ title, text, imageSrc, linkText, linkUrl, imageSourceText, imageSourceUrl, isImageClicked }) {
+export default function TextLeft({
+                                     title,
+                                     text,
+                                     imageSrc,
+                                     linkText,
+                                     linkUrl,
+                                     imageSourceText,
+                                     imageSourceUrl,
+                                     isImageClicked,
+                                     redirectPath, // Der neue prop für den Zielpfad
+                                 }) {
     return (
         <Container className="my-5 border-top border-black">
             <Row className="align-items-center pb-5 pt-5">
                 <Col md={6}>
                     <h3>{title}</h3>
-                    <p>{text}</p>
+                    {/* Die "justified-text"-Klasse anwenden */}
+                    <p className="justified-text">{text}</p>
                     {linkText && linkUrl && (
                         <p>
                             Quelle: <a href={linkUrl} target="_blank" rel="noopener noreferrer">{linkText}</a>
                         </p>
+                    )}
+                    {/* Hier fügen wir den "Go to"-Button hinzu */}
+                    {redirectPath && (
+                        <Link to={redirectPath}>
+                            <Button variant="primary">Go to</Button>
+                        </Link>
                     )}
                 </Col>
                 <Col md={6}>
