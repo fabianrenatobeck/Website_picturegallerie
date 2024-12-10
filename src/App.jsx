@@ -3,7 +3,10 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import ProductDetails from './components/ProductDetails';
+import Drinks from './components/Drinks';
 import Cart from './components/Cart';
+import Gallery from './components/Gallery';
+import AboutUs from './components/AboutUs';
 import Footer from './components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -86,7 +89,10 @@ const App = () => {
                         path="/product/:id"
                         element={<ProductDetails drinks={drinksList} addToCart={addToCart} />}
                     />
+                    <Route path="/drinks" element={<Drinks drinks={drinksList} addToCart={addToCart} />} />
                     <Route path="/cart" element={<Cart cart={cart} removeFromCart={removeFromCart} />} />
+                    <Route path="/gallery" element={<Gallery />} />
+                    <Route path="/aboutUs" element={<AboutUs />} />
                 </Routes>
             </div>
             <Footer />

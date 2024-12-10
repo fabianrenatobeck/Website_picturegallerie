@@ -21,7 +21,7 @@ body {
 }
 
 header {
-  background-color: #ff6f61;
+  background-color: #ff6f61; /* Einheitliches Orange */
   color: white;
   padding: 1rem 0;
 }
@@ -29,17 +29,10 @@ header {
 .main-content h2 {
   text-align: center;
   margin: 2rem 0;
+  color: #ff6f61; /* Einheitliche Akzentfarbe */
 }
 
-.footer {
-  background-color: #333;
-  color: white;
-  padding: 1rem 0;
-  display: flex;
-  justify-content: space-around;
-}
-
-/* Navbar Grundlayout */
+/* Navbar */
 .navbar {
   background-color: #ff6f61;
   color: white;
@@ -53,25 +46,19 @@ header {
   z-index: 1000;
 }
 
-/* Titel */
 .navbar h1 {
   font-size: 1.8rem;
   font-weight: bold;
   margin: 0;
-  white-space: nowrap; /* Verhindert Umbruch des Titels */
+  white-space: nowrap;
 }
 
-/* Desktop Navigation */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 1.5rem;
   margin: 0;
   padding: 0;
-}
-
-.nav-links li {
-  display: inline-block;
 }
 
 .nav-links a {
@@ -86,7 +73,6 @@ header {
   color: #ffe5b4;
 }
 
-/* Mobile Toggle Button */
 .navbar-toggler {
   display: none;
   font-size: 1.5rem;
@@ -94,8 +80,6 @@ header {
   border: none;
   color: white;
   cursor: pointer;
-  margin-left: auto;
-  position: relative; /* Verhindert Verschiebung */
 }
 
 /* Mobile Navigation */
@@ -107,50 +91,276 @@ header {
   padding: 1rem;
   border-radius: 5px;
   margin-top: 1rem;
-  list-style: none;
-  overflow: hidden;
-  transition: max-height 0.3s ease-in-out;
-  max-height: 0;
-  text-align: center;
 }
 
 .nav-links-mobile.show {
   display: flex;
-  max-height: 300px; /* Platz für Animation */
 }
 
 .nav-links-mobile a {
-  color: white; /* Verhindert blaue Links */
-  text-decoration: none; /* Entfernt Unterstrich */
+  color: white;
+  text-decoration: none;
   font-size: 1.2rem;
-  font-weight: bold;
-  padding: 0.5rem 0;
-  transition: background-color 0.3s, color 0.3s;
 }
 
-.nav-links-mobile a:hover {
-  background-color: #ffe5b4; /* Leichtes Highlight beim Hover */
+/* Page Backgrounds */
+.home {
+  background-color: #fff7e6; /* Warmes Beige */
+  text-align: justify;
+  padding: 2rem;
+}
+
+.gallery-container {
+  background-color: #e8f8f5; /* Pastellgrün */
+  padding: 4rem 2rem;
+}
+
+.about-us {
+  background-color: #f7f7f7; /* Leicht hellgrau */
+  padding: 4rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-container {
+  background-color: #f0f9ff; /* Helles Blau */
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-details {
+  background-color: #fef6f6; /* Leichtes Rosa */
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Home */
+.home h1 {
+  font-size: 2.5rem;
   color: #ff6f61;
-  border-radius: 5px;
 }
 
-/* Responsive Design */
+.home p {
+  font-size: 1.2rem;
+  color: #333;
+}
+
 @media (max-width: 768px) {
-  .nav-links {
-    display: none; /* Versteckt Desktop-Navigation */
+  .home h1 {
+    font-size: 2rem;
   }
 
-  .navbar-toggler {
-    display: block; /* Zeigt Toggle-Button */
-  }
-}
-
-@media (min-width: 769px) {
-  .nav-links-mobile {
-    display: none !important; /* Sicherstellen, dass die mobile Navigation ausgeblendet ist */
+  .home p {
+    font-size: 1rem;
   }
 }
 
+/* Gallery */
+.gallery-container h2 {
+  font-size: 2rem;
+  color: #ff6f61;
+  margin-bottom: 1rem;
+}
 
+.large-media {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
+.thumbnail-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  justify-content: start;
+}
 
+.thumbnail {
+  width: 120px;
+  height: 90px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.thumbnail:hover {
+  border-color: #ff6f61;
+}
+
+.thumbnail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* About Us */
+.about-us h2 {
+  color: #e94e3d;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.about-text {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #444;
+  text-align: justify;
+}
+
+.about-text h4 {
+  font-size: 1.5rem;
+  color: #e94e3d;
+  text-align: center;
+}
+
+/* Cart */
+.cart-container h2 {
+  color: #ff6f61;
+  text-align: center;
+}
+
+.cart-item {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 0.5rem 0;
+}
+
+.cart-item button {
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cart-item button:hover {
+  background-color: #e94e3d;
+}
+
+/* Product Details */
+.product-details h1 {
+  color: #ff6f61;
+  font-size: 2rem;
+}
+
+.product-details h4 {
+  color: #444;
+  font-size: 1.2rem;
+}
+
+.product-details p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.product-details button {
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product-details button:hover {
+  background-color: #e94e3d;
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.footer-section a {
+  color: #ff6f61;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+.drinks-container {
+  padding: 2rem;
+  background-color: #fbe8d3; /* Soft teal */
+  width: 100%; /* Full width */
+}
+
+.drinks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 100%; /* Full width */
+}
+
+.drink-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #fff;
+  transition: box-shadow 0.3s;
+}
+
+.drink-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.quantity-input {
+  width: 50px;
+  margin: 0.5rem;
+  padding: 0.2rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.drink-card button {
+  background-color: #ff6f61; /* Warm coral */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.drink-card button:hover {
+  background-color: #ff9f8f; /* Light coral */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .drinks-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .drink-card {
+    padding: 1rem 0.5rem;
+  }
+
+  .quantity-input {
+    width: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .drinks-grid {
+    grid-template-columns: 1fr;
+  }
+}

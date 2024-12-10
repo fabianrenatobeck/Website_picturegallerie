@@ -12,10 +12,10 @@ function Footer() {
             <div className="footer-section">
                 <h3>Socials</h3>
                 <ul>
-                    <li><a lhref="https://youtube.com">YouTube</a></li>
-                    <li><a href="https://instagram.com">Instagram</a></li>
-                    <li><a href="https://twitter.com">Twitter</a></li>
-                    <li><a href="https://tiktok.com">TikTok</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://youtube.com">YouTube</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://instagram.com">Instagram</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://twitter.com">Twitter</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://tiktok.com">TikTok</a></li>
                 </ul>
             </div>
             <div className="footer-section">

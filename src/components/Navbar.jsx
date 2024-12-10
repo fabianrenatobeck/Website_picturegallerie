@@ -18,7 +18,7 @@ function Navbar() {
             {/* Desktop Navigation */}
             <ul className="nav-links">
                 <li><Link to="/">Home</Link></li>
-                <li><Link to="/products">Products</Link></li>
+                <li><Link to="/Drinks">Products</Link></li>
                 <li><Link to="/cart">Cart</Link></li>
                 <li><Link to="/Gallery">Gallery</Link></li>
                 <li><Link to="/AboutUs">About Us</Link></li>

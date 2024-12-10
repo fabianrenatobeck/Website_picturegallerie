@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './Drinks.css';
 
@@ -25,9 +26,15 @@ const Drinks = ({ drinks, addToCart }) => {
                             onChange={(e) => handleQuantityChange(drink.id, e.target.value)}
                             className="quantity-input"
                         />
-                        <button onClick={() => addToCart(drink, parseInt(quantities[drink.id] || 1, 10))}>
+                        <button
+                            className="btn btn-primary"
+                            onClick={() => addToCart(drink, parseInt(quantities[drink.id] || 1, 10))}
+                        >
                             Add to Cart
                         </button>
+                        <Link to={`/product/${drink.id}`} className="btn btn-secondary mt-2">
+                            View Details
+                        </Link>
                     </div>
                 ))}
             </div>

@@ -1,11 +1,10 @@
 // src/components/Gallery.jsx
 import React, { useState } from 'react';
-import './Gallery.css'; // Importiere die spezifischen Styles für die Galerie
 
 const Gallery = () => {
     // Beispielbilder und Videos
     const mediaItems = [
-        { id: 1, src: '../public/bild1.png', alt: 'Bild 1', type: 'image' },
+        { id: 1, src: './assets/bild1.png', alt: 'Bild 1', type: 'image' },
         { id: 2, src: '../public/bild2.png', alt: 'Bild 2', type: 'image' },
         { id: 3, src: '../public/bild3.png', alt: 'Bild 3', type: 'image' },
         { id: 4, src: '../public/1222.mp4', alt: 'Video 1', type: 'video' },
