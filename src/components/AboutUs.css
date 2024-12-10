@@ -1,26 +1,75 @@
 .about-us {
-    background-color: #f9f9f9;
+    background-color: #f7f7f7; /* Leicht helleres Grau für einen angenehmeren Kontrast */
     padding: 4rem 2rem;
-    /*text-align: center;*/
+    border-radius: 10px; /* Weiche Kanten für eine modernere Optik */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Dezenter Schatten für Tiefe */
 }
 
 .about-us h2 {
-    color: #ff6f61;
+    color: #e94e3d; /* Ein satterer Farbton für den Header */
     margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase; /* Für bessere Lesbarkeit und Design */
+    text-align: center;
+    letter-spacing: 1px; /* Dezenter Abstand zwischen Buchstaben */
 }
-
 
 .about-text {
     line-height: 1.8;
-    font-size: 1rem;
-    color: #555;
+    font-size: 1.1rem; /* Etwas größere Schrift für Lesbarkeit */
+    color: #444; /* Dunkleres Grau für besseren Kontrast */
     margin-top: 2rem;
+    text-align: justify; /* Text ausrichten für professionelles Aussehen */
 }
 
 .about-text p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem; /* Größerer Abstand zwischen Absätzen für bessere Lesbarkeit */
     max-width: 800px;
-    /*margin-left: auto;*/
+    margin-left: auto;
     margin-right: auto;
     align-content: baseline;
+}
+
+.about-text h4 {
+    font-size: 1.5rem;
+    color: #e94e3d; /* Gleiche Farbe wie der Haupttitel für Konsistenz */
+    margin-bottom: 1rem;
+    text-align: center;
+    border-bottom: 2px solid #e94e3d; /* Linie unter Überschrift für Akzent */
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.about-text ul {
+    list-style-type: disc;
+    padding-left: 1.5rem; /* Bessere Einrückung für Listen */
+    margin-top: 1rem;
+}
+
+.about-text li {
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+}
+
+.about-text li strong {
+    color: #e94e3d; /* Akzentfarbe für wichtige Wörter */
+}
+
+@media (max-width: 768px) {
+    .about-us {
+        padding: 3rem 1rem; /* Weniger Padding für kleinere Bildschirme */
+    }
+
+    .about-us h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-text {
+        font-size: 1rem;
+    }
+
+    .about-text h4 {
+        font-size: 1.3rem;
+    }
 }
