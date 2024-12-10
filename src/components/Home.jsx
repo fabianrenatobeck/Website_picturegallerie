@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Home.css';
 import TextLeft from './TextFormating/TextLeft.jsx';
 import TextRight from './TextFormating/TextRight.jsx';
 import ImageDrink from '../../public/bild1.png';

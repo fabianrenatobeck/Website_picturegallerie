@@ -1,6 +1,5 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./AboutUs.css";
 import Carousel from "react-bootstrap/Carousel";
 
 function AboutUsCarousel({ slides }) {

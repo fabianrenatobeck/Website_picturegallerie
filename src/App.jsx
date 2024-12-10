@@ -16,8 +16,8 @@ const App = () => {
             id: 1,
             name: 'Limeli Original',
             price: 12.99,
-            description: 'Ein köstliches Getränk aus Schweizer Alpenkräutertee, Honig und Traubensaft.',
-            image: '/images/limeli-original.png',
+            description: 'Eine ausgewogene Mischung aus Alpenkräutertee, Honig, Apfelessig und Traubensaft für jeden Moment.',
+            image: './assets/limeli-original.png',
             details: {
                 articleNumber: '100101',
                 alcoholContent: '0%',
@@ -27,56 +27,67 @@ const App = () => {
                 bottler: 'Limeli AG',
                 brand: 'Limeli',
                 type: 'Erfrischungsgetränk',
+                contents: 'Alpenkräutertee, Honig, Apfelessig, Traubensaft',
             },
         },
-        {
-            id: 2,
-            name: 'Limeli Winter Edition',
-            price: 14.99,
-            description: 'Eine besondere Mischung aus Gewürzen für kalte Tage.',
-            image: '/images/limeli-winter.png',
-            details: {
-                articleNumber: '100102',
-                alcoholContent: '0%',
-                bottleVolume: '50cl',
-                country: 'Schweiz',
-                region: 'Alpen',
-                bottler: 'Limeli AG',
-                brand: 'Limeli',
-                type: 'Erfrischungsgetränk',
-            },
-        },
+        // Weitere Getränke hier ...
     ];
 
-    const [cart, setCart] = useState([]);
+    const [lists, setLists] = useState([{ name: 'Default', items: [] }]);
 
-    const addToCart = (drink, quantity) => {
-        setCart((prevCart) => {
-            const existingDrink = prevCart.find((item) => item.id === drink.id);
-            if (existingDrink) {
-                return prevCart.map((item) =>
-                    item.id === drink.id ? { ...item, quantity: item.quantity + quantity } : item
-                );
+    const addToCart = (drink, quantity, listName = 'Default') => {
+        setLists((prevLists) => {
+            const list = prevLists.find((l) => l.name === listName);
+            if (list) {
+                const existingItem = list.items.find((item) => item.id === drink.id);
+                if (existingItem) {
+                    return prevLists.map((l) =>
+                        l.name === listName
+                            ? {
+                                ...l,
+                                items: l.items.map((item) =>
+                                    item.id === drink.id
+                                        ? { ...item, quantity: item.quantity + quantity }
+                                        : item
+                                ),
+                            }
+                            : l
+                    );
+                } else {
+                    return prevLists.map((l) =>
+                        l.name === listName
+                            ? { ...l, items: [...l.items, { ...drink, quantity }] }
+                            : l
+                    );
+                }
             } else {
-                return [...prevCart, { ...drink, quantity }];
+                return [...prevLists, { name: listName, items: [{ ...drink, quantity }] }];
             }
         });
     };
 
-    const removeFromCart = (drinkId, quantity) => {
-        setCart((prevCart) => {
-            const existingDrink = prevCart.find((item) => item.id === drinkId);
-            if (existingDrink) {
-                if (existingDrink.quantity <= quantity) {
-                    return prevCart.filter((item) => item.id !== drinkId);
-                } else {
-                    return prevCart.map((item) =>
-                        item.id === drinkId ? { ...item, quantity: item.quantity - quantity } : item
-                    );
-                }
-            }
-            return prevCart;
-        });
+    const createNewList = (listName) => {
+        if (!listName.trim()) return; // Leere Liste nicht erstellen
+        setLists((prevLists) => [...prevLists, { name: listName.trim(), items: [] }]);
+    };
+
+    const removeFromCart = (drinkId, listName, quantity) => {
+        setLists((prevLists) =>
+            prevLists.map((list) =>
+                list.name === listName
+                    ? {
+                        ...list,
+                        items: list.items
+                            .map((item) =>
+                                item.id === drinkId
+                                    ? { ...item, quantity: item.quantity - quantity }
+                                    : item
+                            )
+                            .filter((item) => item.quantity > 0),
+                    }
+                    : list
+            )
+        );
     };
 
     return (
@@ -87,10 +98,23 @@ const App = () => {
                     <Route path="/" element={<Home drinks={drinksList} />} />
                     <Route
                         path="/product/:id"
-                        element={<ProductDetails drinks={drinksList} addToCart={addToCart} />}
+                        element={
+                            <ProductDetails
+                                drinks={drinksList}
+                                addToCart={addToCart}
+                                lists={lists}
+                                createNewList={createNewList}
+                            />
+                        }
                     />
-                    <Route path="/drinks" element={<Drinks drinks={drinksList} addToCart={addToCart} />} />
-                    <Route path="/cart" element={<Cart cart={cart} removeFromCart={removeFromCart} />} />
+                    <Route
+                        path="/drinks"
+                        element={<Drinks drinks={drinksList} addToCart={addToCart} />}
+                    />
+                    <Route
+                        path="/cart"
+                        element={<Cart lists={lists} removeFromCart={removeFromCart} />}
+                    />
                     <Route path="/gallery" element={<Gallery />} />
                     <Route path="/aboutUs" element={<AboutUs />} />
                 </Routes>
