@@ -1,21 +1,48 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Drinks from './components/Drinks';
-import Cart from './components/Cart';
 import Home from './components/Home';
-import Gallery from './components/Gallery';
-import AboutUs from './components/AboutUs'; // About Us hinzufügen
-import Footer from './components/Footer'; // Footer hinzufügen
-
+import ProductDetails from './components/ProductDetails';
+import Cart from './components/Cart';
+import Footer from './components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
     const drinksList = [
-        { id: 1, name: 'Coca-Cola', price: 1.99, description: 'Refreshing soda drink.' },
-        { id: 2, name: 'Pepsi', price: 1.89, description: 'Classic cola flavor.' },
-        { id: 3, name: 'Orange Juice', price: 2.5, description: 'Freshly squeezed orange juice.' },
-        { id: 4, name: 'Red Bull', price: 2.99, description: 'Energy drink to boost your day.' },
+        {
+            id: 1,
+            name: 'Limeli Original',
+            price: 12.99,
+            description: 'Ein köstliches Getränk aus Schweizer Alpenkräutertee, Honig und Traubensaft.',
+            image: '/images/limeli-original.png',
+            details: {
+                articleNumber: '100101',
+                alcoholContent: '0%',
+                bottleVolume: '50cl',
+                country: 'Schweiz',
+                region: 'Alpen',
+                bottler: 'Limeli AG',
+                brand: 'Limeli',
+                type: 'Erfrischungsgetränk',
+            },
+        },
+        {
+            id: 2,
+            name: 'Limeli Winter Edition',
+            price: 14.99,
+            description: 'Eine besondere Mischung aus Gewürzen für kalte Tage.',
+            image: '/images/limeli-winter.png',
+            details: {
+                articleNumber: '100102',
+                alcoholContent: '0%',
+                bottleVolume: '50cl',
+                country: 'Schweiz',
+                region: 'Alpen',
+                bottler: 'Limeli AG',
+                brand: 'Limeli',
+                type: 'Erfrischungsgetränk',
+            },
+        },
     ];
 
     const [cart, setCart] = useState([]);
@@ -54,14 +81,15 @@ const App = () => {
             <Navbar />
             <div className="container">
                 <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/products" element={<Drinks drinks={drinksList} addToCart={addToCart} />} />
+                    <Route path="/" element={<Home drinks={drinksList} />} />
+                    <Route
+                        path="/product/:id"
+                        element={<ProductDetails drinks={drinksList} addToCart={addToCart} />}
+                    />
                     <Route path="/cart" element={<Cart cart={cart} removeFromCart={removeFromCart} />} />
-                    <Route path="/gallery" element={<Gallery />} />
-                    <Route path="/aboutUs" element={<AboutUs />} /> {/* About Us Route */}
                 </Routes>
             </div>
-            <Footer /> {/* Footer hinzufügen */}
+            <Footer />
         </Router>
     );
 };
