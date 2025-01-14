@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import "../App.css";
+import Checkout from './CheckoutPage.jsx';
 
 const Cart = ({ lists, removeFromCart, createNewList }) => {
     const [openList, setOpenList] = useState(null);
     const [newListName, setNewListName] = useState('');
+    const [selectedList, setSelectedList] = useState(null); // Zustand für die ausgewählte Liste
 
     const getTotalPrice = (items) => {
         return items.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
@@ -24,6 +26,17 @@ const Cart = ({ lists, removeFromCart, createNewList }) => {
     };
 
     const isListOpen = (listName) => openList === listName;
+
+    if (selectedList) {
+        // Wenn eine Liste ausgewählt ist, zeige die Checkout-Seite an
+        return (
+            <Checkout
+                selectedList={selectedList}
+                onBackToCart={() => setSelectedList(null)}
+                onConfirmPayment={() => alert('Payment confirmed!')} // Beispiel-Aktion
+            />
+        );
+    }
 
     return (
         <div className="cart-container">
@@ -59,6 +72,15 @@ const Cart = ({ lists, removeFromCart, createNewList }) => {
                                             ))}
                                         </ul>
                                         <h4>Total: ${getTotalPrice(list.items)}</h4>
+                                        <button
+                                            className="btn btn-primary mt-2"
+                                            onClick={(e) => {
+                                                e.stopPropagation(); // Verhindert das Schließen
+                                                setSelectedList(list); // Übergibt die aktuelle Liste an Checkout
+                                            }}
+                                        >
+                                            Bezahlen
+                                        </button>
                                     </>
                                 )}
                                 <button
