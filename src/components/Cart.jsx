@@ -11,7 +11,14 @@ const Cart = ({ lists, removeFromCart, createNewList }) => {
     };
 
     const handleCreateList = () => {
-        if (!newListName.trim()) return;
+        if (!newListName.trim()) {
+            alert("List name cannot be empty."); // Fehlermeldung anzeigen
+            return;
+        }
+        if (lists.some((list) => list.name.toLowerCase() === newListName.trim().toLowerCase())) {
+            alert("A list with this name already exists."); // Doppelte Namen verhindern
+            return;
+        }
         createNewList(newListName.trim());
         setNewListName('');
     };
