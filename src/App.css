@@ -223,6 +223,7 @@ header {
 
 
 
+
 /* Product Details */
 .product-details h1 {
   color: #ff6f61;
@@ -455,4 +456,145 @@ header {
 .new-list-card h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
+}
+/*Payment form*/
+.payment-form {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.payment-form h2 {
+  text-align: center;
+  color: #FF8C00;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+}
+
+.payment-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.payment-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  color: #555;
+}
+
+.payment-form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+.payment-form input:focus {
+  border-color: #FF8C00;
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 140, 0, 0.5);
+}
+
+.payment-form .payment-total {
+  margin-top: 20px;
+  font-size: 1.2em;
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+}
+
+.payment-form .payment-total h3 {
+  color: #FF8C00;
+  margin: 0;
+}
+
+.payment-form button {
+  padding: 12px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.payment-form button[type="submit"] {
+  background-color: #FF8C00;
+  color: #fff;
+}
+
+.payment-form button[type="submit"]:hover {
+  background-color: #e67e00;
+}
+
+.payment-form button[type="button"] {
+  background-color: #f0f0f0;
+  color: #333;
+  margin-top: 10px;
+}
+
+.payment-form button[type="button"]:hover {
+  background-color: #e0e0e0;
+}
+/*Footer*/
+.footer {
+  background-color: #000; /* Schwarzer Hintergrund */
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #FF8C00; /* Orange Akzent */
+  font-size: 0.9em;
+  color: #fff; /* Weiße Schrift */
+}
+
+.footer-section {
+  margin-bottom: 15px;
+}
+
+.footer-section h3 {
+  font-size: 1.2em;
+  color: #FF8C00; /* Orange Akzent für Überschriften */
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin: 5px 0;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #FF8C00; /* Orange Links */
+}
+
+.footer-section ul li a:hover {
+  color: #ffa64d; /* Hellerer Orange-Ton beim Hover */
+}
+
+.footer-section p {
+  margin: 5px 0;
+  line-height: 1.5;
+  color: #fff; /* Weiße Schrift für Text */
+}
+
+.footer-section p a {
+  color: #FF8C00; /* Orange Links innerhalb von Paragraphen */
+  text-decoration: none;
+}
+
+.footer-section p a:hover {
+  color: #ffa64d; /* Hellerer Orange-Ton beim Hover */
 }
