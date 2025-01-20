@@ -1,8 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import TextLeft from './TextFormating/TextLeft.jsx';
 import TextRight from './TextFormating/TextRight.jsx';
-import ImageDrink from '../../public/bild1.png';
+import ImageDrink from '../../public/assets/limeli-original.png';
+import ImageDrink2 from '../../public/assets/limeli-winter.png';
+
+import ImageDrink3 from '../../public/assets/limeli-deluxe.png';
+
+import ImageDrink4 from '../../public/assets/limeli-grove.png';
+
 
 const Home = () => {
     return (
@@ -22,7 +27,7 @@ const Home = () => {
             <TextRight
                 title="Limeli Winter Edition"
                 text="Limeli Winter Edition bringt die Wärme der kalten Jahreszeit direkt in dein Glas. Mit einer besonderen Mischung aus Gewürzen wie Zimt, Nelken und einer Prise Ingwer, kombiniert mit den bewährten Zutaten aus Limeli Original, bietet dieses Getränk eine wohltuende Wärme für kalte Tage. Der Apfelessig und der Traubensaft sorgen für eine erfrischende Basis, während die winterlichen Gewürze die Sinne anregen. Ideal für gemütliche Winterabende oder als eine festliche Erfrischung zu besonderen Anlässen – Limeli Winter Edition sorgt für ein echtes Winterwunder im Glas."
-                imageSrc={ImageDrink}
+                imageSrc={ImageDrink2}
                 linkText="View Details"
                 imageSourceText="Limeli Winter Edition Image"
                 redirectPath="/product/2" // Dynamische Route für Produktdetails
@@ -31,7 +36,7 @@ const Home = () => {
             <TextLeft
                 title="Limeli Deluxe"
                 text="Limeli Deluxe ist die luxuriöse Variante des beliebten Originals. Diese Edition überzeugt mit einer intensiveren, vollmundigeren Geschmacksrichtung, die durch die Zugabe von edlen Kräutern und einer zusätzlichen Note von Vanille und Bergkräutern entsteht. Der feinste Schweizer Alpenkräutertee vereint sich mit hochwertigem, regionalem Honig und edelstem Apfelessig, um ein besonders raffiniertes Geschmackserlebnis zu bieten. Limeli Deluxe ist für die besonderen Momente im Leben gedacht, wenn du dich selbst verwöhnen oder Gästen etwas Einzigartiges bieten möchtest. Ein Getränk, das deinen Gaumen verwöhnt und gleichzeitig für Wohlbefinden sorgt."
-                imageSrc={ImageDrink}
+                imageSrc={ImageDrink3}
                 linkText="View Details"
                 imageSourceText="Limeli Deluxe Image"
                 redirectPath="/product/3" // Dynamische Route für Produktdetails
@@ -40,7 +45,7 @@ const Home = () => {
             <TextRight
                 title="Limeli Grove"
                 text="Limeli Grove ist die fruchtige und erfrischende Variante, die dich mit einem Hauch von mediterraner Leichtigkeit verzaubert. Mit einer frischen Kombination aus grünem Tee, Zitrusfrüchten und einer dezenten Note von Minze ist Limeli Grove der perfekte Durstlöscher für warme Tage. Der Apfelessig sorgt für eine leichte Säure, während der Traubensaft und die Zitrusfrüchte das Getränk mit einer angenehmen Frische verfeinern. Limeli Grove ist die ideale Wahl für alle, die einen lebendigen, spritzigen Genuss suchen – eine erfrischende Auszeit in jedem Schluck."
-                imageSrc={ImageDrink}
+                imageSrc={ImageDrink4}
                 linkText="View Details"
                 imageSourceText="Limeli Grove Image"
                 redirectPath="/product/4" // Dynamische Route für Produktdetails

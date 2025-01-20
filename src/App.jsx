@@ -9,6 +9,11 @@ import Gallery from './components/Gallery';
 import AboutUs from './components/AboutUs';
 import Footer from './components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Impressum from './components/Impressum';
+import Datenschutz from './components/Datenschutz';
+import AGB from './components/AGB';
+import Widerruf from './components/Widerruf';
+
 
 const App = () => {
     const drinksList = [
@@ -17,7 +22,7 @@ const App = () => {
             name: 'Limeli Original',
             price: 12.99,
             description: 'Eine ausgewogene Mischung aus Alpenkräutertee, Honig, Apfelessig und Traubensaft für jeden Moment.',
-            image: './assets/limeli-original.png',
+            image: '../assets/limeli-original.png',
             details: {
                 articleNumber: '100101',
                 alcoholContent: '0%',
@@ -36,7 +41,7 @@ const App = () => {
             name: 'Limeli Winter Edition',
             price: 14.99,
             description: 'Eine wärmende Mischung aus Gewürzen wie Zimt, Nelken und Ingwer – ideal für kalte Tage.',
-            image: './assets/limeli-winter.png',
+            image: '../assets/limeli-winter.png',
             details: {
                 articleNumber: '100102',
                 alcoholContent: '0%',
@@ -54,7 +59,7 @@ const App = () => {
             name: 'Limeli Deluxe',
             price: 16.99,
             description: 'Eine luxuriöse Edition mit intensiverem Geschmack, verfeinert mit Vanille und Bergkräutern.',
-            image: './assets/limeli-deluxe.png',
+            image: '../assets/limeli-deluxe.png',
             details: {
                 articleNumber: '100103',
                 alcoholContent: '0%',
@@ -72,7 +77,7 @@ const App = () => {
             name: 'Limeli Grove',
             price: 15.99,
             description: 'Ein erfrischender Mix aus grünem Tee, Zitrusfrüchten und Minze – perfekt für warme Tage.',
-            image: './assets/limeli-grove.png',
+            image: '../assets/limeli-grove.png',
             details: {
                 articleNumber: '100104',
                 alcoholContent: '0%',
@@ -90,7 +95,7 @@ const App = () => {
             name: 'Limeli Summer Breeze',
             price: 13.99,
             description: 'Ein tropischer Genuss mit Mango, Kokoswasser und einem Hauch von Limette.',
-            image: './assets/limeli-summer.png',
+            image: '../assets/limeli-summer.png',
             details: {
                 articleNumber: '100105',
                 alcoholContent: '0%',
@@ -108,7 +113,7 @@ const App = () => {
             name: 'Limeli Midnight Glow',
             price: 17.99,
             description: 'Eine mystische Mischung aus schwarzen Johannisbeeren, Brombeeren und einem Hauch von Lavendel.',
-            image: './assets/limeli-midnight.png',
+            image: '../assets/limeli-midnight.png',
             details: {
                 articleNumber: '100106',
                 alcoholContent: '0%',
@@ -126,7 +131,7 @@ const App = () => {
             name: 'Limeli Citrus Glow',
             price: 15.49,
             description: 'Eine spritzige Fusion aus Blutorange, Mandarine und einer Note von Ingwer.',
-            image: './assets/limeli-citrus.png',
+            image: '../assets/limeli-citrus.png',
             details: {
                 articleNumber: '100107',
                 alcoholContent: '0%',
@@ -144,7 +149,7 @@ const App = () => {
             name: 'Limeli Herbal Bliss',
             price: 16.49,
             description: 'Eine wohltuende Kombination aus Kamille, Zitronenmelisse und einem Hauch von Honig.',
-            image: './assets/limeli-herbal.png',
+            image: '../assets/limeli-herbal.png',
             details: {
                 articleNumber: '100108',
                 alcoholContent: '0%',
@@ -162,7 +167,7 @@ const App = () => {
             name: 'Limeli Arctic Chill',
             price: 14.99,
             description: 'Ein erfrischendes Erlebnis mit Minze, Eukalyptus und einem Hauch von Zitrone.',
-            image: './assets/limeli-arctic.png',
+            image: '../assets/limeli-arctic.png',
             details: {
                 articleNumber: '100109',
                 alcoholContent: '0%',
@@ -233,8 +238,13 @@ const App = () => {
             )
         );
     };
+    const imageUrls = drinksList.map((drink) => drink.image);
+
+
 
     return (
+
+
         <Router>
             <Navbar />
             <div className="container">
@@ -267,6 +277,12 @@ const App = () => {
                     />
                     <Route path="/gallery" element={<Gallery />} />
                     <Route path="/aboutUs" element={<AboutUs />} />
+                    <Route path="/legal/impressum" element={<Impressum />} />
+                    <Route path="/legal/datenschutz" element={<Datenschutz />} />
+                    <Route path="/legal/agb" element={<AGB />} />
+                    <Route path="/legal/widerruf" element={<Widerruf />} />
+                    <Route path="/gallery" element={<Gallery images={imageUrls} />} />
+
                 </Routes>
             </div>
             <Footer />

@@ -1,20 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Footer() {
     return (
         <footer className="footer">
             <div className="footer-section">
                 <h3>Kontakt</h3>
-                <p>Telefon: 079 734 34 89</p>
-                <p>Email: support@foava.ch</p>
+                <p>Telefon: <a href="tel:+41797343489">079 734 34 89</a></p>
+                <p>Email: <a href="mailto:support@foava.ch">support@foava.ch</a></p>
             </div>
             <div className="footer-section">
                 <h3>Rechtliches</h3>
                 <ul>
-                    <li><a href="/impressum" rel="noopener noreferrer">Impressum</a></li>
-                    <li><a href="/datenschutz" rel="noopener noreferrer">Datenschutzerklärung</a></li>
-                    <li><a href="/agb" rel="noopener noreferrer">Allgemeine Geschäftsbedingungen (AGB)</a></li>
-                    <li><a href="/widerruf" rel="noopener noreferrer">Widerrufsbelehrung</a></li>
+                    <li><Link to="/legal/impressum">Impressum</Link></li>
+                    <li><Link to="/legal/datenschutz">Datenschutzerklärung</Link></li>
+                    <li><Link to="/legal/agb">AGB</Link></li>
+                    <li><Link to="/legal/widerruf">Widerrufsbelehrung</Link></li>
                 </ul>
             </div>
             <div className="footer-section">

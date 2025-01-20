@@ -157,46 +157,6 @@ header {
   }
 }
 
-/* Gallery */
-.gallery-container h2 {
-  font-size: 2rem;
-  color: #ff6f61;
-  margin-bottom: 1rem;
-}
-
-.large-media {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.thumbnail-container {
-  display: flex;
-  overflow-x: auto;
-  gap: 1rem;
-  justify-content: start;
-}
-
-.thumbnail {
-  width: 120px;
-  height: 90px;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: border-color 0.3s ease;
-}
-
-.thumbnail:hover {
-  border-color: #ff6f61;
-}
-
-.thumbnail-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-}
 
 /* About Us */
 .about-us h2 {
@@ -597,4 +557,161 @@ header {
 
 .footer-section p a:hover {
   color: #ffa64d; /* Hellerer Orange-Ton beim Hover */
+}
+
+/*LegalPage*/
+.legal-page {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #000; /* Schwarzer Hintergrund */
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.legal-nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.legal-nav ul li a {
+  color: #FF8C00;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.legal-nav ul li a:hover {
+  background-color: #FF8C00;
+  color: #000;
+}
+
+.legal-content h2 {
+  color: #FF8C00;
+  margin-bottom: 15px;
+}
+
+.legal-content h3 {
+  color: #FF8C00;
+  margin-top: 20px;
+}
+
+.legal-content p, .legal-content ul {
+  line-height: 1.6;
+}
+/*Gallery*/
+/* Container für die Galerie */
+.gallery-container {
+  padding: 20px;
+  background-color: #000; /* Schwarzer Hintergrund */
+  color: #fff;
+}
+
+/* Grid für die Bilder */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Flexibles Raster */
+  gap: 15px;
+}
+
+/* Einzelnes Bild in der Galerie */
+.gallery-item {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid #FF8C00; /* Orange Akzent */
+  border-radius: 10px;
+  max-height: 200px; /* Maximale Höhe für Grid-Bilder */
+}
+
+.gallery-item:hover {
+  transform: scale(1.05); /* Vergrößerung beim Hover */
+}
+
+/* Vollbildansicht */
+.image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9); /* Dunkler Overlay-Hintergrund */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px; /* Abstand zum Bildschirmrand */
+  overflow: hidden; /* Verhindert Überlauf des Inhalts */
+}
+
+.image-overlay-content {
+  position: relative;
+  max-width: 90%; /* Bild passt sich der Breite des Bildschirms an */
+  max-height: 90%; /* Bild passt sich der Höhe des Bildschirms an */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-overlay-content img {
+  width: auto; /* Proportionale Breite */
+  height: auto; /* Proportionale Höhe */
+  max-width: 100%; /* Begrenze die maximale Breite */
+  max-height: 80vh; /* Maximale Höhe auf 80% der Viewport-Höhe beschränkt */
+  border-radius: 10px;
+  border: 2px solid #FF8C00; /* Orange Akzent */
+}
+
+/* Schließen-Button */
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #FF8C00; /* Orange Hintergrund */
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.close-button:hover {
+  transform: scale(1.1);
+  background: #ffa64d; /* Hellere Orange beim Hover */
+}
+
+/* Responsives Verhalten für kleinere Bildschirme */
+@media (max-width: 768px) {
+  .image-overlay-content img {
+    max-height: 60vh; /* Maximale Höhe für kleinere Bildschirme */
+  }
+
+  .close-button {
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
 }
