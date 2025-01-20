@@ -159,27 +159,116 @@ header {
 
 
 /* About Us */
-.about-us h2 {
-  color: #e94e3d;
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-align: center;
+/* Allgemeines Styling für den gesamten Abschnitt */
+.about-us {
+  padding: 40px 20px;
+  background-color: #f9f9f9; /* Heller Hintergrund */
+  color: #333; /* Textfarbe */
+  font-family: "Arial", sans-serif;
 }
 
+/* Überschrift des gesamten Bereichs */
+.about-us h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #FF8C00; /* Orange Akzent */
+  margin-bottom: 30px;
+}
+
+/* Carousel-Container */
+.carousel-container {
+  margin-bottom: 50px;
+}
+
+/* Texte */
 .about-text {
+  max-width: 800px;
+  margin: 0 auto;
   line-height: 1.8;
   font-size: 1.1rem;
-  color: #444;
+}
+
+/* Überschriften innerhalb der Texte */
+.about-text h4 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #FF8C00;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+/* Absätze */
+.about-text p {
+  margin-bottom: 20px;
   text-align: justify;
 }
 
-.about-text h4 {
-  font-size: 1.5rem;
-  color: #e94e3d;
-  text-align: center;
+/* Listen */
+.about-text ul {
+  margin: 20px 0;
+  padding-left: 20px;
+  list-style: none;
 }
+
+.about-text ul li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.about-text ul li:before {
+  content: "•";
+  color: #FF8C00; /* Orange Punkt */
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Bilder zwischen den Abschnitten */
+.about-text img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 30px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsives Design */
+@media (max-width: 768px) {
+  .about-us h2 {
+    font-size: 2rem;
+  }
+
+  .about-text {
+    font-size: 1rem;
+  }
+
+  .about-text h4 {
+    font-size: 1.5rem;
+  }
+}
+/* Styling für Bilder */
+.about-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 30px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling für Videos */
+.about-video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 30px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 
 
 
@@ -715,3 +804,5 @@ header {
     font-size: 1rem;
   }
 }
+/*-----------------*/
+

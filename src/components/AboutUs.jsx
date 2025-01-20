@@ -11,7 +11,7 @@ function AboutUsCarousel({ slides }) {
                         className="d-block w-100"
                         src={slide.image}
                         alt={slide.title}
-                        style={{ height: "400px", objectFit: "cover" }} // Beispiel-Styling
+                        style={{ height: "400px", objectFit: "cover" }}
                     />
                     <Carousel.Caption>
                         <h3>{slide.title}</h3>
@@ -28,38 +28,10 @@ function AboutUsCarousel({ slides }) {
 
 export default function AboutUs() {
     const personenSlides = [
-        {
-            image: "path/to/image1.jpg", // Ersetze durch den tatsächlichen Bildpfad
-            title: "Henri Guisan",
-            description: "Wichtiger militärischer Führer im 2. Weltkrieg.",
-            linkUrl: "https://www.nzz.ch/schweiz/ein-gluecksfall-in-der-gefaehrlichsten-phase-unserer-geschichte-wie-general-guisan-zum-held-der-schweiz-wurde-und-was-er-uns-heute-noch-sagt-ld.1853528",
-            linkName: "Henri Guisan",
-            internalLink: "/wichtige-personlichkeiten",
-        },
-        {
-            image: "path/to/image2.jpg",
-            title: "Samuel Gonard",
-            description: "Kompetenter Stratege im 2. Weltkrieg.",
-            linkUrl: "https://de-academic.com/dic.nsf/dewiki/1230769",
-            linkName: "Samuel Gonard",
-            internalLink: "/wichtige-personlichkeiten",
-        },
-        {
-            image: "path/to/image3.jpg",
-            title: "Carl Buckhardt",
-            description: "Präsident des Internationalen Komitees vom Roten Kreuz im 2. Weltkrieg.",
-            linkUrl: "https://de.wikipedia.org/wiki/Carl_Jacob_Burckhardt",
-            linkName: "Carl Buckhardt",
-            internalLink: "/wichtige-personlichkeiten",
-        },
-        {
-            image: "path/to/image4.jpg",
-            title: "Roger Masson",
-            description: "Zuständig für das Informationsnetz.",
-            linkUrl: "https://en.wikipedia.org/wiki/Roger_Masson",
-            linkName: "Roger Masson",
-            internalLink: "/wichtige-personlichkeiten",
-        },
+        { image: "../assets/ich.jpeg", title: "Fabian Beck", description: "CEO & CAO" },
+        { image: "../assets/oscar.jpeg", title: "Oscar Peach", description: "CTO & CAO" },
+        { image: "../assets/huet.jpeg", title: "Aaron Noah Windisch", description: "CMO" },
+        { image: "../assets/cool.jpeg", title: "Alan Barzanji", description: "CPO" },
     ];
 
     return (
@@ -80,12 +52,25 @@ export default function AboutUs() {
 
                 <h4>Unsere Geschichte</h4>
                 <p>
-                    Die Geschichte von Limeli begann mit einer einfachen Idee: Ein Getränk zu schaffen, das nicht
-                    nur köstlich schmeckt, sondern auch gesund ist und die positiven Eigenschaften der Natur in sich
-                    trägt. Gegründet in der Schweiz, einer Region, die für ihre unberührte Natur und ihre
-                    vielfältige Flora bekannt ist, wollten wir ein Produkt entwickeln, das die besten regionalen
-                    Zutaten nutzt und gleichzeitig umweltbewusst und nachhaltig produziert wird.
+                    Wir waren einst eine kleine Gruppe aus dem Freifach Gründe dein unternehmen. Wir haben uns
+                    lange den Kopf zerbrochen was für ein produkt wir auf den Markt bringen wollen. Wir hatten
+                    ideen wie eine Günstige alternative zu den teuren Airtag von Apple, ein magnet ständer für
+                    eine magische optik in deinem Wohnzimmer, Glace mit knusper Müesli und sogar ein Selbsterwärmendes
+                    Dosengetränk. Wir haben uns am ende auf etwas simples geeinigt, wir wollten eine Bio Limonade mit
+                    dem Zuckerersatz honig auf den Markt bringen. Wir haben uns also daran gesetzt uns ein retzept
+                    auszudenken, was uns schnell gelungen ist. Es beinhaltet, wie das Original hier auf der Webseite,
+                    Honig, Tee, Apfelessig und Traubensaft. Bedauerlicherweise hat es unsere limo nie in die
+                    Produktion geschaft. Aus unglücklichen umständen hat sich unser Team aufgelöst. Die Individuellen
+                    visionen für unser produkt waren zu verschieden und die Arbeitmoral hat gefehlt. Wir haben probiert
+                    uns zu reten indem wir die person ersetzten die ausserhalb der oblogatorischen Schulstunden, bei
+                    denen wir uns traffen, nicht erreichbar ist und auch nichts in seiner freizeit getan hat. Die
+                    Klassenperson der 2I Sophie Nemet konnte uns dabei helfen. Sie empfohl uns eine passende person
+                    die den pasten bestens auffüllen hätte können. Leider war es da schon zu spät. Wir haben wenige
+                    Tage danach unser Team bei Herrn Lautenschlagen offiziel abgemeldet. Die Rezeptur habe ich dann
+                    privat zuhause nach gemacht und ich bin überzeugt davon das wir es weit gebracht hätten.
                 </p>
+
+                <img src="../assets/Oscar.png" alt="Unser Produkt" className="about-image"/>
 
                 <h4>Unsere Produkte</h4>
                 <p>
@@ -95,6 +80,11 @@ export default function AboutUs() {
                     Alpenkräutern, Honig, Apfelessig und Traubensaft – die Grundlage für den einzigartigen Geschmack
                     und die gesundheitsfördernden Eigenschaften unserer Getränke.
                 </p>
+
+                <video controls className="about-video">
+                    <source src="../assets/0120.mp4" type="video/mp4"/>
+                    Dein Browser unterstützt das Video-Tag nicht.
+                </video>
 
                 <h4>Nachhaltigkeit und Fairness</h4>
                 <p>
@@ -106,10 +96,10 @@ export default function AboutUs() {
 
                 <h4>Unsere Vision</h4>
                 <p>
-                    Unsere Vision ist es, Limeli zu einer Marke zu machen, die für Qualität, Nachhaltigkeit und
-                    Lebensfreude steht. Wir möchten ein Produkt schaffen, das Menschen in allen Lebenslagen
-                    begleitet – sei es bei der Erfrischung zwischendurch, beim Entspannen nach einem langen Tag oder
-                    beim Genießen eines besonderen Moments im Kreise der Familie oder Freunde.
+                    Limeli war gedacht als erstes BIO Softgetränk auf den Markt zukommen. Wir wollten das Bio der neue
+                    Standarts wird und mit unserem Getränk ein Stein für eine Gesunde und umweltfreundlich umgebung zu
+                    setzten. Aber das war noch nicht alles. Wir wollten an die Spitze, an die Spitze der schweizer
+                    Getränke und den Momentanen König von seinem Tron stossen, Rivela.
                 </p>
 
                 <h4>Unsere Werte</h4>
