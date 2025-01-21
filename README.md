@@ -143,6 +143,3 @@ _Füge hier einen Screenshot des Checkout-Prozesses ein._
 ## **Lizenz**
 Dieses Projekt steht unter der **MIT-Lizenz**. Weitere Informationen findest du in der Datei `LICENSE`.
 
----
-
-Lass mich wissen, falls noch Anpassungen benötigt werden! 😊
