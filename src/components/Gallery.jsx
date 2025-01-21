@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 function Gallery() {
-    const [selectedImage, setSelectedImage] = useState(null);
+    const [selectedMedia, setSelectedMedia] = useState(null);
 
     // Manuell hinzugefügte Bilder
     const manualImages = [
@@ -24,51 +24,69 @@ function Gallery() {
         '../assets/huet.jpeg',
         '../assets/girl.jpeg',
         '../assets/oscar.jpeg',
-
-
     ];
 
-    const openImage = (image) => {
-        setSelectedImage(image);
+    // Manuell hinzugefügte Videos
+    const manualVideos = [
+        '../assets/0120.mp4', // Beispielvideo
+    ];
+
+    const openMedia = (media) => {
+        setSelectedMedia(media);
     };
 
-    const closeImage = (e) => {
-        if (e.target.classList.contains('image-overlay')) {
-            setSelectedImage(null);
+    const closeMedia = (e) => {
+        if (e.target.classList.contains('media-overlay')) {
+            setSelectedMedia(null);
         }
     };
 
-    if (manualImages.length === 0) {
-        return <p className="no-images-message">Keine Bilder verfügbar.</p>;
-    }
-
     return (
         <div className="gallery-container">
-            {/* Grid mit den Bildern */}
+            {/* Grid mit Bildern und Videos */}
             <div className="gallery-grid">
+                {/* Bilder */}
                 {manualImages.map((image, index) => (
                     <div
-                        key={index}
+                        key={`image-${index}`}
                         className="gallery-item"
-                        onClick={() => openImage(image)}
+                        onClick={() => openMedia({ type: 'image', src: image })}
                         role="button"
                         tabIndex={0}
-                        onKeyDown={(e) => e.key === 'Enter' && openImage(image)}
+                        onKeyDown={(e) => e.key === 'Enter' && openMedia({ type: 'image', src: image })}
                     >
                         <img src={image} alt={`Gallery Item ${index}`} className="gallery-image" />
                     </div>
                 ))}
+
+                {/* Videos */}
+                {manualVideos.map((video, index) => (
+                    <div
+                        key={`video-${index}`}
+                        className="gallery-item"
+                        onClick={() => openMedia({ type: 'video', src: video })}
+                        role="button"
+                        tabIndex={0}
+                        onKeyDown={(e) => e.key === 'Enter' && openMedia({ type: 'video', src: video })}
+                    >
+                        <video src={video} className="gallery-video" muted loop />
+                    </div>
+                ))}
             </div>
 
-            {/* Overlay für das ausgewählte Bild */}
-            {selectedImage && (
-                <div className="image-overlay" onClick={closeImage}>
-                    <div className="image-overlay-content">
-                        <img src={selectedImage} alt="Selected" className="overlay-image" />
+            {/* Overlay für das ausgewählte Medium */}
+            {selectedMedia && (
+                <div className="media-overlay" onClick={closeMedia}>
+                    <div className="media-overlay-content">
+                        {selectedMedia.type === 'image' ? (
+                            <img src={selectedMedia.src} alt="Selected" className="overlay-media" />
+                        ) : (
+                            <video src={selectedMedia.src} controls autoPlay className="overlay-media" />
+                        )}
                         <button
                             className="close-button"
-                            onClick={() => setSelectedImage(null)}
-                            aria-label="Bild schließen"
+                            onClick={() => setSelectedMedia(null)}
+                            aria-label="Schließen"
                         >
                             &times;
                         </button>
