@@ -27,22 +27,19 @@ const ProductDetails = ({ drinks, addToCart, lists, createNewList }) => {
 
     return (
         <div className="container mt-5">
-            <div className="row">
+            <div className="product-details-container">
                 {/* Produktbild */}
-                <div className="col-md-6">
-                    <img
-                        src={product.image}
-                        alt={product.name}
-                        className="img-fluid rounded"
-                        style={{ maxHeight: '400px', objectFit: 'cover' }}
-                    />
-                </div>
+                <img
+                    src={product.image}
+                    alt={product.name}
+                    className="product-image"
+                />
 
                 {/* Produktdetails */}
-                <div className="col-md-6">
-                    <h1 className="text-primary">{product.name}</h1>
-                    <h4 className="text-secondary">{product.price} CHF</h4>
-                    <p className="mt-3">{product.description}</p>
+                <div className="product-details">
+                    <h1>{product.name}</h1>
+                    <h4>{product.price} CHF</h4>
+                    <p>{product.description}</p>
                     <hr />
                     <h5>Produktdetails</h5>
                     <ul className="list-unstyled">
@@ -71,7 +68,6 @@ const ProductDetails = ({ drinks, addToCart, lists, createNewList }) => {
                             <option value="new">+ Create New List</option>
                         </select>
 
-                        {/* Neues Listenformular anzeigen */}
                         {selectedList === 'new' && (
                             <div className="mt-2">
                                 <input
@@ -90,7 +86,7 @@ const ProductDetails = ({ drinks, addToCart, lists, createNewList }) => {
                             </div>
                         )}
 
-                        {/* Anzahl auswählen */}
+                        {/* Buttons */}
                         <div className="d-flex align-items-center mt-3">
                             <input
                                 type="number"
@@ -115,6 +111,7 @@ const ProductDetails = ({ drinks, addToCart, lists, createNewList }) => {
             </div>
         </div>
     );
+
 };
 
 export default ProductDetails;

@@ -45,7 +45,17 @@ const CheckoutPage = ({ selectedList, onBackToCart }) => {
                         style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '15px 0', borderBottom: '1px solid #f0f0f0' }}
                     >
                         <div style={{ display: 'flex', flexDirection: 'row', flex: 1, alignItems: 'center', gap: '15px' }}>
-                            <img src={item.image} alt={item.name} style={{ width: '50px', height: '50px', borderRadius: '5px', objectFit: 'cover' }} />
+                            <img
+                                src={item.image}
+                                alt={item.name}
+                                style={{
+                                    width: '200px', // Breitere Bilder
+                                    height: '200px', // Einheitliche Höhe
+                                    borderRadius: '10px',
+                                    objectFit: 'cover', // Proportional skalieren
+                                    boxShadow: '0 2px 5px rgba(0, 0, 0, 0.2)', // Leichter Schatten
+                                }}
+                            />
                             <div>
                                 <h4 style={{ marginBottom: '5px', color: '#333' }}>{item.name}</h4>
                                 <p style={{ color: '#777' }}>{item.description}</p>

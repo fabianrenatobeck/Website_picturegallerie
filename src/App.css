@@ -129,12 +129,7 @@ header {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.product-details {
-  background-color: #fef6f6; /* Leichtes Rosa */
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+
 
 /* Home */
 .home h1 {
@@ -303,14 +298,44 @@ header {
 
 
 /* Product Details */
+/* Container für Produktdetails */
+.product-details-container {
+  display: flex; /* Horizontale Anordnung */
+  gap: 20px; /* Abstand zwischen Bild und Text */
+  align-items: flex-start; /* Vertikale Ausrichtung oben */
+  margin: 2rem 0; /* Außenabstand */
+}
+
+/* Styling für das Produktbild */
+.product-image {
+  flex: 2; /* Bild nimmt mehr Platz ein */
+  max-width: 100%; /* Füllt den verfügbaren Platz */
+  height: 500px; /* Feste Höhe für das Bild */
+  object-fit: cover; /* Bild füllt den Bereich ohne Verzerrung */
+  border-radius: 10px; /* Abgerundete Ecken */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+}
+
+/* Styling für den Textbereich */
+.product-details {
+  flex: 3; /* Textbereich nimmt etwas mehr Platz ein */
+  background-color: #fef6f6; /* Leichtes Rosa */
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Überschriften und Texte */
 .product-details h1 {
   color: #ff6f61;
   font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .product-details h4 {
   color: #444;
   font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 .product-details p {
@@ -318,6 +343,7 @@ header {
   margin-bottom: 1rem;
 }
 
+/* Buttons */
 .product-details button {
   background-color: #ff6f61;
   color: white;
@@ -325,30 +351,99 @@ header {
   padding: 0.5rem 1rem;
   border-radius: 5px;
   cursor: pointer;
+  margin-right: 10px; /* Abstand zwischen Buttons */
 }
 
 .product-details button:hover {
   background-color: #e94e3d;
 }
 
+
 /* Footer */
-.footer {
-  background-color: #333;
-  color: white;
-  padding: 2rem;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  text-align: center;
+.footer-section {
+  margin: 10px;
+  text-align: left;
+  flex: 1;
+  min-width: 150px; /* Mindestbreite für die Abschnitte */
 }
 
-.footer-section a {
-  color: #ff6f61;
+.footer-section h3 {
+  margin-bottom: 5px;
+  color: #FF8C00;
+  font-size: 1rem;
 }
 
-.footer-section a:hover {
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Horizontale Anordnung */
+  gap: 15px; /* Abstand zwischen den Links */
+  align-items: center;
+}
+
+.footer-section ul li {
+  position: relative;
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.footer-section ul li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background-color: #fff; /* Weiße Trennlinie */
+  opacity: 0.5; /* Transparenz für dezente Darstellung */
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #FF8C00; /* Orange Links */
+  font-weight: bold;
+}
+
+.footer-section ul li a:hover {
   text-decoration: underline;
+  color: #ffa64d; /* Hellere Orange beim Hover */
 }
+
+.footer {
+  position: fixed; /* Footer bleibt am unteren Rand fixiert */
+  bottom: 0; /* Positioniert den Footer unten */
+  left: 0;
+  width: 100%; /* Breite über die gesamte Seite */
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  font-family: Arial, sans-serif;
+  display: flex; /* Flexbox für horizontale Anordnung */
+  justify-content: space-between; /* Gleichmäßiger Abstand zwischen den Abschnitten */
+  align-items: center;
+  flex-wrap: wrap; /* Zeilenumbruch bei kleinen Bildschirmen */
+}
+
+/* Responsive Anpassung */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column; /* Vertikale Anordnung bei kleinen Bildschirmen */
+    text-align: center;
+  }
+
+  .footer-section ul {
+    flex-direction: column; /* Links untereinander bei kleinen Bildschirmen */
+    gap: 10px; /* Abstand zwischen Links */
+  }
+
+  .footer-section ul li:not(:last-child)::after {
+    content: none; /* Entfernt Trennlinien auf kleinen Bildschirmen */
+  }
+}
+
 /* Cart */
 .cart-container h2 {
   color: #ff6f61;
@@ -834,4 +929,5 @@ header {
   }
 }
 /*-----------------*/
+
 

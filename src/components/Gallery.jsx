@@ -23,6 +23,8 @@ function Gallery() {
         '../assets/cool.jpeg',
         '../assets/huet.jpeg',
         '../assets/girl.jpeg',
+        '../assets/oscar.jpeg',
+
 
     ];
 
