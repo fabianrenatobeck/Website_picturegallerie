@@ -4,7 +4,7 @@ import ExampleCarouselImage from 'components/ExampleCarouselImage';
 function carousel() {
     return (
         <Carousel>
-            <Carousel.Item interval={1000}>
+            <Carousel.Item interval={3000}>
                 <ExampleCarouselImage text="First slide" />
                 <Carousel.Caption>
                     <h3>First slide label</h3>

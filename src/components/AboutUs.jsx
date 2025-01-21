@@ -2,11 +2,12 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Carousel from "react-bootstrap/Carousel";
 
+
 function AboutUsCarousel({ slides }) {
     return (
         <Carousel>
             {slides.map((slide, index) => (
-                <Carousel.Item key={index} interval={1000}>
+                <Carousel.Item key={index} interval={3000}>
                     <img
                         className="d-block w-100"
                         src={slide.image}
@@ -70,7 +71,12 @@ export default function AboutUs() {
                     privat zuhause nach gemacht und ich bin überzeugt davon das wir es weit gebracht hätten.
                 </p>
 
-                <img src="../assets/Oscar.png" alt="Unser Produkt" className="about-image"/>
+                <div className="about-image-grid">
+                    <img src="../assets/Oscar.png" alt="Bild 1"/>
+                    <img src="../assets/Erde.png" alt="Bild 2"/>
+                    <img src="../assets/Alan.png" alt="Bild 3"/>
+                    <img src="../assets/Zaun.png" alt="Bild 4"/>
+                </div>
 
                 <h4>Unsere Produkte</h4>
                 <p>
@@ -80,11 +86,14 @@ export default function AboutUs() {
                     Alpenkräutern, Honig, Apfelessig und Traubensaft – die Grundlage für den einzigartigen Geschmack
                     und die gesundheitsfördernden Eigenschaften unserer Getränke.
                 </p>
+                <div className="about-video-container">
 
-                <video controls className="about-video">
-                    <source src="../assets/0120.mp4" type="video/mp4"/>
-                    Dein Browser unterstützt das Video-Tag nicht.
-                </video>
+                    <video controls className="about-video">
+                        <source src="../assets/0120.mp4" type="video/mp4"/>
+                        Dein Browser unterstützt das Video-Tag nicht.
+                    </video>
+                </div>
+
 
                 <h4>Nachhaltigkeit und Fairness</h4>
                 <p>
@@ -96,8 +105,10 @@ export default function AboutUs() {
 
                 <h4>Unsere Vision</h4>
                 <p>
-                    Limeli war gedacht als erstes BIO Softgetränk auf den Markt zukommen. Wir wollten das Bio der neue
-                    Standarts wird und mit unserem Getränk ein Stein für eine Gesunde und umweltfreundlich umgebung zu
+                    Limeli war gedacht als erstes BIO Softgetränk auf den Markt zukommen. Wir wollten das Bio der
+                    neue
+                    Standarts wird und mit unserem Getränk ein Stein für eine Gesunde und umweltfreundlich umgebung
+                    zu
                     setzten. Aber das war noch nicht alles. Wir wollten an die Spitze, an die Spitze der schweizer
                     Getränke und den Momentanen König von seinem Tron stossen, Rivela.
                 </p>
@@ -137,7 +148,8 @@ export default function AboutUs() {
 
                 <h4>Danke, dass du Teil unserer Reise bist!</h4>
                 <p>
-                    Wir sind stolz darauf, dass du dich für Limeli entschieden hast. Gemeinsam können wir einen kleinen
+                    Wir sind stolz darauf, dass du dich für Limeli entschieden hast. Gemeinsam können wir einen
+                    kleinen
                     Beitrag zu einer nachhaltigeren Zukunft leisten. Willkommen in der Limeli-Familie!
                 </p>
             </div>

@@ -249,24 +249,53 @@ header {
     font-size: 1.5rem;
   }
 }
-/* Styling für Bilder */
-.about-image {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 30px auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Styling für den Bild-Container */
+.about-image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Flexible Spalten */
+  gap: 20px; /* Abstand zwischen den Bildern */
+  max-width: 800px; /* Maximale Breite des Grids */
+  margin: 30px auto; /* Zentriert das Grid */
 }
 
-/* Styling für Videos */
-.about-video {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 30px auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Styling für die Bilder */
+.about-image-grid img {
+  width: 100%; /* Bilder füllen die Zellen aus */
+  height: 200px; /* Feste Höhe für die Bilder */
+  object-fit: cover; /* Proportionale Anpassung, überschüssige Bereiche werden abgeschnitten */
+  border-radius: 10px; /* Abgerundete Ecken */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+  transition: transform 0.3s ease; /* Animation beim Hover */
+}
+
+/* Hover-Effekt */
+.about-image-grid img:hover {
+  transform: scale(1.05); /* Vergrößerung beim Hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stärkerer Schatten beim Hover */
+}
+
+/* Styling für den Video-Container */
+.about-video-container {
+  position: relative;
+  width: 100%; /* Breite des Containers */
+  max-width: 800px; /* Maximale Breite für das Video */
+  aspect-ratio: 16 / 9; /* 16:9 Seitenverhältnis */
+  margin: 30px auto; /* Zentriert den Container */
+  background-color: #000; /* Schwarzer Hintergrund */
+  overflow: hidden; /* Schneidet überstehende Bereiche ab */
+  border-radius: 10px; /* Abgerundete Ecken */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+}
+
+/* Styling für das Video */
+.about-video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Video passt sich der Breite des Containers an */
+  height: 100%; /* Höhe des Videos entspricht der Höhe des Containers */
+  object-fit: cover; /* Schneidet das Video passend zu */
+  border-radius: 10px; /* Gleiche Ecken wie der Container */
 }
 
 
